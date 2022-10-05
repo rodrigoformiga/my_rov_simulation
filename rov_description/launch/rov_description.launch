@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <group ns="/rov">
+
+    <!-- Robot model -->
+    <param name="robot_description" command="xacro  '$(find rov_description)/urdf/rov.xacro'" />
+
+    <arg name="x" default="0"/> 
+    <arg name="y" default="0"/> 
+    <arg name="z" default="0"/>
+    <arg name="roll" default="0"/> 
+    <arg name="pitch" default="0"/> 
+    <arg name="yaw" default="0"/>        
+
+    <!-- Spawn the robot model -->
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model robot -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) " />
+
+    <!-- Load controllers -->
+    <!-- <rosparam command="load" file="$(find platform_control_arm)/config/controllers.yaml" />  -->
+    <!-- Controllers -->
+    <!-- <node name="arm_controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" ns="/platform"
+        args="- -namespace=/platform
+        joint_state_controller
+        platform_controller
+        - -timeout 60"/> -->
+    <!-- <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_velocity_controller"/> -->
+
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+      <param name="publish_frequency" type="double" value="50.0"/>
+      <remap from="/joint_states" to="/rov/joint_states"/>
+    </node> -->
+   
+  </group>
+
+</launch>

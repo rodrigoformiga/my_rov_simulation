@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="verbose" default="false"/>
+    <arg name="use_sim_time"  default="true"/>
+    <!-- <arg name="paused" default="treue"/> -->
+    <arg name="gazebo_gui" default="true"/>
+    <arg name="headless"      default="false"/>
+    <arg name="debug"         default="false"/>
+    <!-- <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
+        default=" -J base_to_torretbed 0 -J elo1_to_elo2 1.2 -J torretbed_to_elo1 -0.6"/> -->
+
+    <!-- startup simulated world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" default="worlds/empty.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="gui" value="$(arg gazebo_gui)"/>
+    </include>
+    <include file="$(find rov_description)/launch/rov_description.launch" /> 
+
+</launch>

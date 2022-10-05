@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<robot name="truster" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<!-- _________________________________ LINKS TRUSTERS VERTICAL ___________________________________ -->
+
+
+    <link name="truster_vertical_01">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.116"/>
+        <inertia ixx="0.00007494"  ixy="-0.00000111"  ixz="0.0" iyy="0.00007366" iyz="0.0" izz="0.00008106" />
+        </inertial>
+    </link>
+
+    <link name="truster_helice_vertical_01">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.013"/>
+        <inertia ixx="0.00000165"  ixy="0.0"  ixz="0.0" iyy="0.00000201" iyz="0.0" izz="0.00000165" />
+        </inertial>
+    </link>
+
+
+
+    <link name="truster_vertical_02">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.116"/>
+        <inertia ixx="0.00007494"  ixy="-0.00000111"  ixz="0.0" iyy="0.00007366" iyz="0.0" izz="0.00008106" />
+        </inertial>
+    </link>
+
+    <link name="truster_helice_vertical_02">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.013"/>
+        <inertia ixx="0.00000165"  ixy="0.0"  ixz="0.0" iyy="0.00000201" iyz="0.0" izz="0.00000165" />
+        </inertial>
+    </link>
+
+<!-- __________________     LINKS TRUSTERS HORIZONTAL   _____________________ -->
+
+    <link name="truster_horiz_01">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.116"/>
+        <inertia ixx="0.00007494"  ixy="-0.00000111"  ixz="0.0" iyy="0.00007366" iyz="0.0" izz="0.00008106" />
+        </inertial>
+    </link>
+
+    <link name="truster_helice_horiz_01">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.013"/>
+        <inertia ixx="0.00000165"  ixy="0.0"  ixz="0.0" iyy="0.00000201" iyz="0.0" izz="0.00000165" />
+        </inertial>
+    </link>
+
+    <link name="truster_horiz_02">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.116"/>
+        <inertia ixx="0.00007494"  ixy="-0.00000111"  ixz="0.0" iyy="0.00007366" iyz="0.0" izz="0.00008106" />
+        </inertial>
+    </link>
+
+    <link name="truster_helice_horiz_02">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.013"/>
+        <inertia ixx="0.00000165"  ixy="0.0"  ixz="0.0" iyy="0.00000201" iyz="0.0" izz="0.00000165" />
+        </inertial>
+    </link>
+
+    <link name="truster_horiz_03">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.116"/>
+        <inertia ixx="0.00007494"  ixy="-0.00000111"  ixz="0.0" iyy="0.00007366" iyz="0.0" izz="0.00008106" />
+        </inertial>
+    </link>
+
+    <link name="truster_helice_horiz_03">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.013"/>
+        <inertia ixx="0.00000165"  ixy="0.0"  ixz="0.0" iyy="0.00000201" iyz="0.0" izz="0.00000165" />
+        </inertial>
+    </link>
+
+    <link name="truster_horiz_04">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.116"/>
+        <inertia ixx="0.00007494"  ixy="-0.00000111"  ixz="0.0" iyy="0.00007366" iyz="0.0" izz="0.00008106" />
+        </inertial>
+    </link>
+
+    <link name="truster_helice_horiz_04">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/truster_helice.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.013"/>
+        <inertia ixx="0.00000165"  ixy="0.0"  ixz="0.0" iyy="0.00000201" iyz="0.0" izz="0.00000165" />
+        </inertial>
+    </link>
+
+
+
+    <joint name="truster_vertical_01_to_helice" type="fixed">
+        <parent link="truster_vertical_01"/>
+        <child link="truster_helice_vertical_01"/>
+        <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+    </joint>
+
+    <joint name="truster_vertical_02_to_helice" type="fixed">
+        <parent link="truster_vertical_02"/>
+        <child link="truster_helice_vertical_02"/>
+        <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+    </joint>
+
+    <joint name="truster_horiz_01_to_helice" type="fixed">
+        <parent link="truster_horiz_01"/>
+        <child link="truster_helice_horiz_01"/>
+        <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+    </joint>
+
+    <joint name="truster_horiz_02_to_helice" type="fixed">
+        <parent link="truster_horiz_02"/>
+        <child link="truster_helice_horiz_02"/>
+        <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+    </joint>
+
+    <joint name="truster_horiz_03_to_helice" type="fixed">
+        <parent link="truster_horiz_03"/>
+        <child link="truster_helice_horiz_03"/>
+        <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+    </joint>
+
+    <joint name="truster_horiz_04_to_helice" type="fixed">
+        <parent link="truster_horiz_04"/>
+        <child link="truster_helice_horiz_04"/>
+        <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+    </joint>
+
+
+</robot>

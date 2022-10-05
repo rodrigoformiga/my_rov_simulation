@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot name="rov_description" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- <xacro:include filename="$(find uuv_descriptions)/urdf/common.urdf.xacro"/>
+  <xacro:include filename="$(find uuv_sensor_ros_plugins)/urdf/sensor_snippets.xacro"/>
+  <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_snippets.xacro" />
+  <xacro:include filename="$(find uuv_gazebo_ros_plugins)/urdf/snippets.xacro"/> -->
+  <xacro:include filename="$(find rov_description)/urdf/truster.xacro"/>
+  
+  <!-- Parameters -->
+  <!-- <xacro:property name="visual_mesh_file" value="file://$(find rexrov2_description)/meshes/RexROV2_no_props.dae"/> -->
+
+    <link name="base_link"/>
+
+    <link name="chassis">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/rov.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/rov.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0.3 0 0"/>
+        <mass value="4.8"/>
+        <inertia ixx="0.12508907"  ixy="-0.00010876"  ixz="-0.00018732" iyy="0.06187282" iyz="0.00436993" izz="0.0738469" />
+        </inertial>
+    </link>
+
+    <joint name="base_link_to_chassis" type="fixed">
+        <parent link="base_link"/>
+        <child link="chassis"/>
+        <origin xyz="0.0 0.0 0.164" rpy="0 0 0" />
+    </joint>
+
+    <joint name="chassis_to_truster" type="fixed">
+        <parent link="chassis"/>
+        <child link="truster_vertical_01"/>
+        <origin xyz="0.0 0.0 0.8" rpy="0 0 0" />
+    </joint>
+
+    <joint name="chassis_to_truster" type="fixed">
+        <parent link="chassis"/>
+        <child link="truster_vertical_02"/>
+        <origin xyz="0.0 0.0 0.8" rpy="0 0 0" />
+    </joint>
+
+    <joint name="chassis_to_truster" type="fixed">
+        <parent link="chassis"/>
+        <child link="truster_horiz_01"/>
+        <origin xyz="0.0 0.0 0.8" rpy="0 0 0" />
+    </joint>
+
+    <joint name="chassis_to_truster" type="fixed">
+        <parent link="chassis"/>
+        <child link="truster_horiz_02"/>
+        <origin xyz="0.0 0.0 0.8" rpy="0 0 0" />
+    </joint>
+    
+    <joint name="chassis_to_truster" type="fixed">
+        <parent link="chassis"/>
+        <child link="truster_horiz_03"/>
+        <origin xyz="0.0 0.0 0.8" rpy="0 0 0" />
+    </joint>
+
+    <joint name="chassis_to_truster" type="fixed">
+        <parent link="chassis"/>
+        <child link="truster_horiz_04"/>
+        <origin xyz="0.0 0.0 0.8" rpy="0 0 0" />
+    </joint>
+
+</robot>
