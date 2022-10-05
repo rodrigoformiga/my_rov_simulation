@@ -250,42 +250,46 @@
     </link>
 
 
-
-    <joint name="truster_vertical_01_to_helice" type="fixed">
+    <joint name="truster_vertical_01_to_helice" type="continuous">
         <parent link="truster_vertical_01"/>
         <child link="truster_helice_vertical_01"/>
         <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+        <axis xyz="0 1 0" />
     </joint>
 
-    <joint name="truster_vertical_02_to_helice" type="fixed">
+    <joint name="truster_vertical_02_to_helice" type="continuous">
         <parent link="truster_vertical_02"/>
         <child link="truster_helice_vertical_02"/>
         <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+        <axis xyz="0 1 0" />
     </joint>
 
-    <joint name="truster_horiz_01_to_helice" type="fixed">
+    <joint name="truster_horiz_01_to_helice" type="continuous">
         <parent link="truster_horiz_01"/>
         <child link="truster_helice_horiz_01"/>
         <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+        <axis xyz="0 1 0" />
     </joint>
 
-    <joint name="truster_horiz_02_to_helice" type="fixed">
+    <joint name="truster_horiz_02_to_helice" type="continuous">
         <parent link="truster_horiz_02"/>
         <child link="truster_helice_horiz_02"/>
         <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+        <axis xyz="0 1 0" />
     </joint>
 
-    <joint name="truster_horiz_03_to_helice" type="fixed">
+    <joint name="truster_horiz_03_to_helice" type="continuous">
         <parent link="truster_horiz_03"/>
         <child link="truster_helice_horiz_03"/>
         <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+        <axis xyz="0 1 0" />
     </joint>
 
-    <joint name="truster_horiz_04_to_helice" type="fixed">
+    <joint name="truster_horiz_04_to_helice" type="continuous">
         <parent link="truster_horiz_04"/>
         <child link="truster_helice_horiz_04"/>
         <origin xyz="0.0 0.025 0.0" rpy="3.1416 0 0" />
+        <axis xyz="0 1 0" />
     </joint>
-
 
 </robot>

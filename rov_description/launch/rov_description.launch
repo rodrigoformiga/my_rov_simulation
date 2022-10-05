@@ -3,7 +3,7 @@
   <group ns="/rov">
 
     <!-- Robot model -->
-    <param name="robot_description" command="xacro  '$(find rov_description)/urdf/rov.xacro'" />
+    <param name="robot_description" command="xacro  '$(find rov_simulation)/urdf/rov_simulation.xacro'" />
 
     <arg name="x" default="0"/> 
     <arg name="y" default="0"/> 
@@ -17,20 +17,20 @@
           args="-urdf -param robot_description -model robot -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) " />
 
     <!-- Load controllers -->
-    <!-- <rosparam command="load" file="$(find platform_control_arm)/config/controllers.yaml" />  -->
+    <rosparam command="load" file="$(find rov_description)/config/controllers.yaml" /> 
     <!-- Controllers -->
-    <!-- <node name="arm_controller_spawner" pkg="controller_manager" type="spawner"
-        respawn="false" output="screen" ns="/platform"
-        args="- -namespace=/platform
+    <node name="arm_controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" ns="/rov"
+        args="--namespace=/rov
         joint_state_controller
-        platform_controller
-        - -timeout 60"/> -->
+        rov_controller
+        --timeout 60"/>
     <!-- <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_velocity_controller"/> -->
 
-    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
       <param name="publish_frequency" type="double" value="50.0"/>
       <remap from="/joint_states" to="/rov/joint_states"/>
-    </node> -->
+    </node>
    
   </group>
 

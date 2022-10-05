@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="rov_camera" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <link name="camera">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/camera.stl" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://rov_description/meshes/camera.stl" />
+        </geometry>
+        </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.115"/>
+        <inertia ixx="0.00004099"  ixy="0.0"  ixz="0.0" iyy="0.00001313" iyz="0.0" izz="0.00004099" />
+        </inertial>
+    </link>
+
+    <link name="fake_camera"/>
+    
+    <joint name="camera_fake" type="fixed">
+        <parent link="camera"/>
+        <child link="fake_camera"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 -1.5704" />
+    </joint>
+</robot>

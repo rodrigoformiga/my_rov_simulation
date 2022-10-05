@@ -1,0 +1,8 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 1000
+
+rov_controller:
+  type                          : velocity_controllers/JointGroupVelocityController
+  joints                        : [truster_vertical_01_to_helice, truster_vertical_02_to_helice, truster_horiz_01_to_helice, truster_horiz_02_to_helice, truster_horiz_03_to_helice, truster_horiz_04_to_helice]
+  publish_rate                  : 10

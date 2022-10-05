@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<robot name="rov_simulation" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find rov_description)/urdf/rov.xacro"/>
+
+    <gazebo reference="chassis">
+        <material>Gazebo/ZincYellow</material>
+    </gazebo>
+
+
+    <gazebo reference="truster_vertical_01">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="truster_vertical_02">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="truster_horiz_01">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="truster_horiz_02">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="truster_horiz_03">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="truster_horiz_04">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+
+    <gazebo reference="truster_helice_vertical_01">
+        <material>Gazebo/RedBright</material>
+    </gazebo>
+    <gazebo reference="truster_helice_vertical_02">
+        <material>Gazebo/RedBright</material>
+    </gazebo>
+    <gazebo reference="truster_helice_horiz_01">
+        <material>Gazebo/RedBright</material>
+    </gazebo>
+    <gazebo reference="truster_helice_horiz_02">
+        <material>Gazebo/RedBright</material>
+    </gazebo>
+    <gazebo reference="truster_helice_horiz_03">
+        <material>Gazebo/RedBright</material>
+    </gazebo>
+    <gazebo reference="truster_helice_horiz_04">
+        <material>Gazebo/RedBright</material>
+    </gazebo>
+
+    <gazebo reference="camera">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+
+    <transmission name="trans_truster_vertical_01_to_helice">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="truster_vertical_01_to_helice">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="truster_vertical_01_to_helice_motor">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+
+    <transmission name="trans_truster_vertical_02_to_helice">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="truster_vertical_02_to_helice">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="truster_vertical_02_to_helice_motor">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+
+    <transmission name="trans_truster_horiz_01_to_helice">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="truster_horiz_01_to_helice">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="truster_horiz_01_to_helice_motor">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+
+    <transmission name="trans_truster_horiz_02_to_helice">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="truster_horiz_02_to_helice">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="truster_horiz_02_to_helice_motor">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <transmission name="trans_truster_horiz_03_to_helice">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="truster_horiz_03_to_helice">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="truster_horiz_03_to_helice_motor">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+
+    <transmission name="trans_truster_horiz_04_to_helice">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="truster_horiz_04_to_helice">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="truster_horiz_04_to_helice_motor">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <legacyModeNS>true</legacyModeNS>
+            <robotNamespace>/rov</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="imu_controller" filename="libgazebo_ros_imu.so">
+            <alwaysOn>true</alwaysOn>
+            <bodyName>chassis</bodyName>
+            <frameName>chassis</frameName>
+            <topicName>imu</topicName>
+            <serviceName>imu_service</serviceName>
+            <gaussianNoise>0.0</gaussianNoise>
+            <updateRate>40.0</updateRate>
+            <accelDrift>0.005 0.005 0.005</accelDrift>
+            <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+            <rateDrift>0.005 0.005 0.005</rateDrift>
+            <rateGaussianNoise>0.005 0.005 0.005</rateGaussianNoise>
+            <headingDrift>0.005</headingDrift>
+            <headingGaussianNoise>0.005</headingGaussianNoise>
+        </plugin>
+    </gazebo>
+
+  <gazebo reference="fake_camera">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>40.0</updateRate>
+        <cameraName>/camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+</robot>
