@@ -3,6 +3,33 @@ joint_state_controller:
   publish_rate: 1000
 
 rov_controller:
-  type                          : velocity_controllers/JointGroupVelocityController
-  joints                        : [truster_vertical_01_to_helice, truster_vertical_02_to_helice, truster_horiz_01_to_helice, truster_horiz_02_to_helice, truster_horiz_03_to_helice, truster_horiz_04_to_helice]
-  publish_rate                  : 10
+  type: velocity_controllers/JointGroupVelocityController
+  joints: 
+      - truster_vertical_01_to_helice
+      - truster_vertical_02_to_helice
+      - truster_horiz_01_to_helice 
+      - truster_horiz_02_to_helice
+      - truster_horiz_03_to_helice
+      - truster_horiz_04_to_helice
+  # constraints:
+  #     goal_time: 0.0
+  #     # vel_tolerance is 0 for due to the movegroup/follow_joint_trajectory/goal tolerance is empty
+  #     stopped_velocity_tolerance: 0
+  #     truster_vertical_01_to_helice: {trajectory: 0.1, goal: 0}
+  #     truster_vertical_02_to_helice: {trajectory: 0.1, goal: 0}
+  #     truster_horiz_01_to_helice: {trajectory: 0.1, goal: 0}
+  #     truster_horiz_02_to_helice: {trajectory: 0.1, goal: 0}
+  #     truster_horiz_03_to_helice: {trajectory: 0.1, goal: 0}
+  #     truster_horiz_04_to_helice: {trajectory: 0.1, goal: 0}
+
+  # gains:
+  #     truster_vertical_01_to_helice: { p: 10, d: 1, i: 1, i_clamp: 1 }
+  #     truster_vertical_02_to_helice: { p: 10, d: 1, i: 1, i_clamp: 1 }
+  #     truster_horiz_01_to_helice: { p: 10, d: 1, i: 1, i_clamp: 1 }
+  #     truster_horiz_02_to_helice: { p: 10, d: 1, i: 1, i_clamp: 1 }
+  #     truster_horiz_03_to_helice: { p: 10, d: 1, i: 1, i_clamp: 1 }
+  #     truster_horiz_04_to_helice: { p: 10, d: 1, i: 1, i_clamp: 1 }
+  
+  # stop_trajectory_duration: 0.5
+  state_publish_rate:  50
+  # action_monitor_rate: 10

@@ -19,7 +19,7 @@
     <!-- Load controllers -->
     <rosparam command="load" file="$(find rov_description)/config/controllers.yaml" /> 
     <!-- Controllers -->
-    <node name="arm_controller_spawner" pkg="controller_manager" type="spawner"
+    <node name="controller_spawner" pkg="controller_manager" type="spawner"
         respawn="false" output="screen" ns="/rov"
         args="--namespace=/rov
         joint_state_controller
@@ -31,7 +31,7 @@
       <param name="publish_frequency" type="double" value="50.0"/>
       <remap from="/joint_states" to="/rov/joint_states"/>
     </node>
-   
+
   </group>
 
 </launch>
