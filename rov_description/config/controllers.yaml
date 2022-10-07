@@ -2,15 +2,44 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 1000
 
-rov_controller:
-  type: velocity_controllers/JointGroupVelocityController
-  joints: 
-      - truster_vertical_01_to_helice
-      - truster_vertical_02_to_helice
-      - truster_horiz_01_to_helice 
-      - truster_horiz_02_to_helice
-      - truster_horiz_03_to_helice
-      - truster_horiz_04_to_helice
+# rov_controller:
+#   type: velocity_controllers/JointGroupVelocityController
+#   joints: 
+#       - truster_vertical_01_to_helice
+#       - truster_vertical_02_to_helice
+#       - truster_horiz_01_to_helice 
+#       - truster_horiz_02_to_helice
+#       - truster_horiz_03_to_helice
+#       - truster_horiz_04_to_helice
+
+joint1_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: truster_vertical_01_to_helice
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+joint2_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: truster_vertical_02_to_helice
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+joint3_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: truster_horiz_01_to_helice
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+joint4_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: truster_horiz_02_to_helice
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+joint5_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: truster_horiz_03_to_helice
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+joint6_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: truster_horiz_04_to_helice
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
   # constraints:
   #     goal_time: 0.0
   #     # vel_tolerance is 0 for due to the movegroup/follow_joint_trajectory/goal tolerance is empty
@@ -31,5 +60,5 @@ rov_controller:
   #     truster_horiz_04_to_helice: { p: 10, d: 1, i: 1, i_clamp: 1 }
   
   # stop_trajectory_duration: 0.5
-  state_publish_rate:  50
+  # state_publish_rate:  50
   # action_monitor_rate: 10

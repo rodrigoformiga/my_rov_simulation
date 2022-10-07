@@ -189,5 +189,20 @@
     </sensor>
   </gazebo>
 
+    <!-- <gazebo>
+        <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+            <updateRate>100.0</updateRate>
+            <leftFrontJoint>left_base_mat_to_left_wheel_front</leftFrontJoint>
+            <rightFrontJoint>right_base_mat_to_right_wheel_front</rightFrontJoint>
+            <leftRearJoint>left_base_mat_to_left_wheel_back</leftRearJoint>
+            <rightRearJoint>right_base_mat_to_right_wheel_back</rightRearJoint>
+            <wheelSeparation>5.21395246</wheelSeparation>
+            <wheelDiameter>1.48103523</wheelDiameter>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <torque>2000000</torque>
+            <topicName>cmd_vel</topicName>
+            <broadcastTF>false</broadcastTF>
+        </plugin>
+    </gazebo> -->
 
 </robot>

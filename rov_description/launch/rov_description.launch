@@ -23,7 +23,12 @@
         respawn="false" output="screen" ns="/rov"
         args="--namespace=/rov
         joint_state_controller
-        rov_controller
+        joint1_velocity_controller
+        joint2_velocity_controller
+        joint3_velocity_controller
+        joint4_velocity_controller
+        joint5_velocity_controller
+        joint6_velocity_controller
         --timeout 60"/>
     <!-- <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_velocity_controller"/> -->
 

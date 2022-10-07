@@ -1,20 +1,49 @@
 <?xml version="1.0"?>
 <launch>
+    <arg name="set_timeout" default="false"/>
+    <arg name="timeout" default="0.0"/>
     <arg name="verbose" default="false"/>
     <arg name="use_sim_time"  default="true"/>
     <!-- <arg name="paused" default="treue"/> -->
     <arg name="gazebo_gui" default="true"/>
     <arg name="headless"      default="false"/>
     <arg name="debug"         default="false"/>
+    <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find uuv_gazebo_worlds)/model"/>
+    <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find uuv_gazebo_worlds)/model"/>
     <!-- <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
         default=" -J base_to_torretbed 0 -J elo1_to_elo2 1.2 -J torretbed_to_elo1 -0.6"/> -->
 
     <!-- startup simulated world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <!-- <arg name="world_name" value="worlds/auv_underwater_world.world"/> -->
         <arg name="world_name" default="worlds/empty.world"/>
-        <arg name="paused" value="false"/>
+        <arg name="paused" value="true"/>
         <arg name="gui" value="$(arg gazebo_gui)"/>
     </include>
-    <include file="$(find rov_description)/launch/rov_description.launch" /> 
+    <!-- <include file="$(find rov_description)/launch/rov_description.launch" /> 
 
+    <include file="$(find uuv_assistants)/launch/publish_world_ned_frame.launch"/>
+
+    <node name="publish_world_models"
+        pkg="uuv_assistants"
+        type="publish_world_models.py"
+        output="screen">
+        <rosparam subst_value="true">
+          meshes:
+              sea_surface:
+                  mesh: package://uuv_gazebo_worlds/Media/models/sea_surface_1000m_x_1000m.dae
+                  model: sea_surface
+                  scale: [2, 2, 1]
+              sea_bottom:
+                  plane: [2000, 2000, 0.1]
+                  pose:
+                      position: [0, 0, -80]              
+        </rosparam>
+    </node>
+
+    <group if="$(arg set_timeout)">
+        <include file="$(find uuv_assistants)/launch/set_simulation_timer.launch">
+            <arg name="timeout" value="$(arg timeout)"/>
+        </include>
+    </group> -->
 </launch>
